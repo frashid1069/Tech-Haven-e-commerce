@@ -3,6 +3,10 @@ import Product from "./Product";
 
 export default class ProductList extends Component {
   render() {
-    return <h3>Hello from ProductList</h3>;
+    return (
+      <div>
+        <h3>Hello from ProductList</h3>
+      </div>
+    );
   }
 }
