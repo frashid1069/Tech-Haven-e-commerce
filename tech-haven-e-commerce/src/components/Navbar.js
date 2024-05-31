@@ -38,7 +38,7 @@ https://www.iconfinder.com/Makoto_msk */}
 const NavWrapper = styled.nav`
   background: var(--mainBlue);
   .nav-link {
-    color: var(--mainBlue) !important;
+    color: var(--mainWhite) !important;
     font-size: 1.3rem;
     text-transform: capitalize;
   }
