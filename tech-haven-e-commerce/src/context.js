@@ -8,6 +8,8 @@ class ProductProvider extends Component {
     products: [],
     detailProduct: detailProduct,
     cart: [],
+    modalOpen: false,
+    modalProduct: detailProduct,
   };
   componentDidMount() {
     this.setProducts();
@@ -45,6 +47,17 @@ class ProductProvider extends Component {
       return { products: tempProducts, cart: [...this.state.cart, product] };
     });
   };
+  openModal = (id) => {
+    const product = this.getItem(id);
+    this.setState(() => {
+      return { modalProduct: product, modalOpen: true };
+    });
+  };
+  closeModal = () => {
+    this.setState(() => {
+      return { modalOpen: false };
+    });
+  };
 
   render() {
     return (
@@ -53,6 +66,8 @@ class ProductProvider extends Component {
           ...this.state,
           handleDetail: this.handleDetail,
           addToCart: this.addToCart,
+          openModal: this.openModal,
+          closeModal: this.closeModal,
         }}
       >
         {this.props.children}
