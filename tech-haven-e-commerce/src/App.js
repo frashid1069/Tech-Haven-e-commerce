@@ -8,6 +8,7 @@ import Details from "./components/Details";
 import Cart from "./components/Cart/Cart";
 import Default from "./components/Default";
 import Modal from "./components/Modal";
+import CheckoutCart from "./components/Cart/CheckoutCart";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/" component={ProductList} />
           <Route path="/details" component={Details} />
           <Route path="/cart" component={Cart} />
+          <Route path="/checkout" component={CheckoutCart} />
           <Route component={Default} />
           <Route />
         </Switch>

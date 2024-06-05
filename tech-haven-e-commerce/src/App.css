@@ -4,6 +4,7 @@
   --mainWhite: #f3f3f3;
   --mainDark: #232528;
   --mainYellow: #ffa400;
+  --mainPink: #ff55e0;
 }
 body {
   font-family: "Oswald", sans-serif !important;
@@ -43,4 +44,15 @@ body {
   cursor: pointer;
   font-size: 1.2rem;
   color: var(--mainYellow);
+}
+.text-right {
+  text-align: right !important;
+}
+/* .navbar-special {
+  display: flex !important;
+  justify-content: right !important;
+} */
+.left-items {
+  display: flex; /* Use flexbox to arrange logo and title horizontally */
+  align-items: center; /* Align items vertically center */
 }

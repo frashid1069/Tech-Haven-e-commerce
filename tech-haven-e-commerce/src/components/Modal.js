@@ -12,8 +12,9 @@ export default class Modal extends Component {
           const { modalOpen, closeModal } = value;
           const { img, title, price } = value.modalProduct;
 
-          if (!modalOpen) return null;
-          else {
+          if (!modalOpen) {
+            return null;
+          } else {
             return (
               <ModalContainer>
                 <div className="container">
@@ -56,7 +57,7 @@ const ModalContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  rignt: 0;
+  right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
   display: flex;

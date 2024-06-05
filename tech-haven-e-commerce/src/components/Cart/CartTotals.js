@@ -1,17 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ButtonContainer } from "../Button";
+import PayPalButton from "./PayPalButton";
+import CheckoutCart from "./CheckoutCart";
 
-export default function CartTotals({ value }) {
+export default function CartTotals({ value /*history*/ }) {
   const { cartSubtotal, cartTax, cartTotal, clearCart } = value;
 
   return (
     <React.Fragment>
       <div className="container">
         <div className="row">
-          <div className="col-10 mt-2 ml-sm-5 ml-md-auto col-sm-8 text-capitalize text-right">
+          <div className="ml-sm-5 mt-2 ml-md-auto text-capitalize text-right">
             <Link to="/">
               <button
-                className="btn btn-outline-danger text-uppercase mb-5 px-5"
+                className="btn btn-outline-danger text-uppercase my-5 px-5"
                 type="button"
                 onClick={() => {
                   clearCart();
@@ -32,9 +35,31 @@ export default function CartTotals({ value }) {
               <span className="text-title">total : </span>
               <strong>$ {cartTotal}</strong>
             </h5>
+            <Link to="/checkout">
+              <ButtonContainer
+                cart
+                className="btn btn-outline-danger text-uppercase my-4 px-3"
+                type="button"
+                onClick={() => {
+                  clearCart();
+                }}
+              >
+                <span style={{ paddingRight: "0.7rem" }}>
+                  <i className="fas fa-money-check-dollar"></i>
+                </span>
+                Express Checkout
+              </ButtonContainer>
+            </Link>
+            {/* <PayPalButton
+              total={cartTotal}
+              clearCart={clearCart}
+              history={history}
+            ></PayPalButton> */}
           </div>
         </div>
       </div>
     </React.Fragment>
   );
 }
+
+// (col-10) (col-sm-8) for the 3rd div in React.Fragment
